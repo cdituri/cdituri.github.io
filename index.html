@@ -3,38 +3,97 @@
         <meta charset="utf-8">
         <meta name="google-site-verification" content="IE1SGqG1m_N74dAyUlgg2WrwtyMY-X_BnpdjG55lv9c" />
         <style>
-            body {
-                margin: 0 10% 0 10%;
-            }
+            @import url('https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css');
 
             .layout {
                 display: grid;
                 grid-template-columns: repeat(12, minmax(0, 1fr));
                 grid-gap: 20px;
             }
+
+            article > img {
+                width: 100%;
+                height: auto;
+            }
             
-            header {
-                grid-column: 1 / 12;
-                grid-row: 1;
-                border-bottom: 1px solid #999;
+            @media screen and (max-width: 800px) {
+                body {
+                    position: relative;
+                }
+
+                header {
+                    grid-column: 1 / 13;
+                    grid-row: 1;
+                    border-bottom: 1px solid #999;
+                }
+
+                header > nav#hamburger {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 2em;
+                    right: 1em;
+                    z-index: 1;
+                }
+
+                nav#main-menu {
+                    position: absolute;
+                    display: none;
+                    padding-top: 0.5em;
+                    right: 0;
+                    height: 100%;
+                    width: 30%;
+                    padding-left: 1.5em;
+                    background-color: #e1e1e1;
+                    color: black;
+                }
+                
+                section#articles {
+                    grid-column: 1 / 12;
+                    grid-row: 2;
+                }
+
             }
 
-            aside {
-                grid-column: 1 / 4;
-                grid-row: 2;
-                padding-right: 2.5em;
-                margin-right: 0.5em;
-                border-right: 1px solid #999;
+            @media screen and (min-width: 801px) {
+                body {
+                    margin: 0 10% 0 10%;
+                }
+
+                header {
+                    grid-column: 1 / 12;
+                    grid-row: 1;
+                    border-bottom: 1px solid #999;
+                }
+
+                header > nav#hamburger {
+                    display: none;
+                }
+
+                nav#main-menu {
+                    grid-column: 1 / 4;
+                    grid-row: 2;
+                    padding-right: 2.5em;
+                    margin-right: 0.5em;
+                    border-right: 1px solid #999;
+                }
+
+                section#articles {
+                    grid-column: 4 / 12;
+                    grid-row: 2;
+                    padding: 0 1em 0 1em;
+                }
+
+            }
+
+            article {
+                border-radius: 5px;
+                border: 0.1em solid black;
+                padding: 0 1em 0 1em;
+                margin: 0.5em 0 0.5em 0;
             }
 
             .article-header > span {
                 font-size: x-small;
-            }
-
-            article {
-                grid-column: 4 / 12;
-                grid-row: 2;
-                padding: 0 1em 0 1em;
             }
 
             footer {
@@ -45,49 +104,84 @@
     </head>
     <body>
         <div class="layout">
-        <header>
-            <h1>Github Pages</h1>
-        </header>
-        <aside>
-            <h4>About Me</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            <p>
-            <p>sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </aside>
-        <article>
-            <h5 class="article-header">
-                Informative post title<br/>
-                <span>Published On: 2021-04-21</span>
-            </h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </article>
-        <footer>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-        </footer>
+
+            <header>
+                <h1>Github Pages</h1>
+                <nav id="hamburger" class="fa fa-bars"></nav>
+            </header>
+
+            <nav id="main-menu">
+
+                <h4>About Me</h4>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p>
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                <p>
+                <p>sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </nav>
+
+            <section id="articles">
+                <article>
+                    <h5 class="article-header">
+                        Informative post title<br/>
+                        <span>Published On: 2021-04-21</span>
+                    </h5>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </article>
+
+                <article>
+                    <h5 class="article-header">
+                        Informative post title<br/>
+                        <span>Published On: 2021-04-21</span>
+                    </h5>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <img src="https://www.rittmanmead.com/blog/content/images/2017/01/gitflow.png"></img>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exerz-indecitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </article>
+
+                <article>
+                    <h5 class="article-header">
+                        Informative post title<br/>
+                        <span>Published On: 2021-04-21</span>
+                    </h5>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </article>
+            </section>
+
+            <nav id="paginator">
+
+            </nav>
+
+            <footer>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </p>
+            </footer>
+        </div>
     </body>
 </html>
